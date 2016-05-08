@@ -28,6 +28,8 @@ Vagrant.configure(2) do |config|
 
   # cook do
   config.vm.provision 'shell', :privileged => true, :inline => <<-SHELL
-    itamae local /vagrant/setup_apache.rb /vagrant/deploy_demopage.rb
+    itamae local \
+      /vagrant/cookbooks/apache/setup_apache.rb \
+      /vagrant/cookbooks/apache/deploy_demopage.rb
   SHELL
 end
